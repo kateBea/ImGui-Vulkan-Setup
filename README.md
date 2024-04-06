@@ -5,7 +5,7 @@ This is another project from my spare time about setting up a Vulkan application
 ## Features
 
 - Vulkan integration: Sets up a Vulkan rendering context for the application.
-- ImGui integration: Integrate ImGui for creating user interfaces within the application.
+- ImGui integration: Integrate ImGui for creating user interfaces within the Vulkan application.
 
 ## Prerequisites
 
