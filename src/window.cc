@@ -1,4 +1,5 @@
 #include <vksetup/window.hh>
+#include <vksetup/logger.hh>
 
 #include <iostream>
 
@@ -94,10 +95,8 @@ namespace vksetup {
             []([[maybe_unused]] GLFWwindow* handle, double x, double y) -> void {
                 window* data{ static_cast<window*>(glfwGetWindowUserPointer(handle)) };
 
-                // TODO: use logger
-                std::cout << "title: " << data->get_title() << 
-                    " width: " << data->get_width() << 
-                    " height: " << data->get_height() << '\n';
+                CORE_LOGGER_DEBUG("title: {}, width: {}, height: {}", 
+                    data->get_title(),  data->get_width(), data->get_height());
             }
         );
 
@@ -111,7 +110,7 @@ namespace vksetup {
 
             // Set error messages callback for GLFW
             glfwSetErrorCallback([](std::int32_t errCode, const char* desc) -> void {
-                // TODO: use logger
+                CORE_LOGGER_ERROR("GLFW error. Code: {}, Description: {}", errCode, desc);
             });
         }
     }

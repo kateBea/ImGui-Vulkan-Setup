@@ -1,3 +1,4 @@
+#include <vksetup/assert.hh>
 #include <vksetup/application.hh>
 #include <vksetup/vulkan/vulkan_context.hh>
 
@@ -16,6 +17,7 @@ namespace vksetup {
             }
         );
 
+        ASSERT(m_window, "Window is null");
 
         return result;
     }

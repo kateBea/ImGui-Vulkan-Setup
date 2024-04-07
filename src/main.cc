@@ -8,7 +8,6 @@ int main(int, char**) {
 
     auto ptr{ std::make_unique<application>() };
 
-
     try {
         if (ptr->init()) {
             ptr->run();
